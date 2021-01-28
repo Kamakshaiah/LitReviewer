@@ -1,0 +1,32 @@
+# functions
+text = 'internet of things for smart cities'
+1. makeQuery(self, text)
+2. getLinks(self, url)
+3. openSource(self, links, **kwargs):
+4. getAbstract(self, links, num = 1)
+5. getTitles(self, url)
+6. wordFrequencies(self, titles)
+7. makeDistinctWords(self, title, termmat, length=7)
+8. barChart(self, termmat)
+
+# process
+
+title = 'internet of things for smart cities'
+gscholar = gs(title)
+url = gscholar.makeQuery()
+print(url)
+links = gscholar.getLinks(url)
+print(links) 
+print(len(links))
+for i in links:
+	print(i) 
+gscholar.openSource(links, num=7)
+gscholar.getAbstract(links, num=7)
+titles = gscholar.getTitles(url)
+for i in titles:
+	print(i)
+termmat = gscholar.wordFrequencies(titles)
+print(termmat)
+distinctwords = gscholar.makeDistinctWords(title, termmat)
+print(distinctwords)
+gscholar.barChart(distinctwords)
