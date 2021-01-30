@@ -3,11 +3,17 @@ text = 'internet of things for smart cities'
 1. makeQuery(self, text)
 2. getLinks(self, url)
 3. openSource(self, links, **kwargs):
-4. getAbstract(self, links, num = 1)
+4. getText(self, links, path, num, savetext=False)
 5. getTitles(self, url)
 6. wordFrequencies(self, titles)
 7. makeDistinctWords(self, title, termmat, length=7)
 8. barChart(self, termmat)
+9. makeTables(dict:data)
+10. saveAsCSVFile(path, dict:data)
+11. twoSampleIndTTest(v1, v2)
+12. boxPlot(pd.DF:data)
+13. computeIQR(pd.DF:data)
+
 
 # process
 

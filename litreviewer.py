@@ -56,7 +56,7 @@ class gs:
             for i in links:
                 wb.open(i)
 
-    def getAbstract(self, links, num = 1):
+    def getText(self, links, path, num, savetext=False):
         ''' get abstract for given page source '''
 
         from bs4 import BeautifulSoup
@@ -75,10 +75,22 @@ class gs:
 
         abs = ['abstract', 'Abstract', 'ABSTRACT']
 
+        text = ''
+        
         for p in ptags:
-            for i in abs:
-                if i in p.text:
-                    print(p.text)
+            print(p.text)
+##            for i in abs:
+##                if i in p.text:
+
+        if savetext==True:
+            for p in ptags:
+                text += p.text + '\n'
+
+        path = path + '\\file.txt'
+
+        f = open(path,'w')
+        f.write(text)
+        f.close()            
                     
     def getTitles(self, url):
         ''' retrieves titles '''
@@ -214,19 +226,21 @@ class gs:
         return stat
         
         
-##if __name__ == '__main__':
-##    title = 'internet of things for smart cities'
-##    gscholar = gs(title, num=50)
-##    url = gscholar.makeQuery()
+if __name__ == '__main__':
+    title = 'internet of things for smart cities'
+    path = 'D:\\Work\\Python\\Scripts\\gs'
+    gscholar = gs(title, num=50)
+    url = gscholar.makeQuery()
 ##    print(url)
-##    links = gscholar.getLinks(url)
+    links = gscholar.getLinks(url)
+    
 ##    print(links) 
 ##    print(len(links))
 ##
 ##    for i in links:
 ##        print(i) 
 ##    gscholar.openSource(links, num=7)
-##    gscholar.getAbstract(links, num=7)
+    gscholar.getText(links, path=path, num=15,  savetext=True)
 ##    titles = gscholar.getTitles(url)
 ##    for i in titles:
 ##        print(i)
