@@ -1,0 +1,9 @@
+bs4
+requests
+lxml
+matplolib
+pandas
+scipy
+sklearn
+gensim
+seaborn
