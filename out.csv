@@ -1,83 +1,83 @@
 ,words,freq,labels
-0,[html][html],1,0
-1,covid-19:,2,1
-2,suppression?religion,1,0
+0, html  html ,0,1
+1,covid 19 ,0,1
+2,suppression religion,0,1
 3,reactance,1,0
-4,guidelines.the,1,0
-5,consequences,2,1
-6,physical,1,0
-7,distancing:,1,0
-8,prevention,2,1
-9,interventioncovid‐19,1,0
-10,geriatric,1,0
-11,populationa,1,0
-12,framework,1,0
-13,identifying,1,0
-14,mitigating,1,0
-15,interventionsonline,1,0
-16,recovery,1,0
-17,support,3,1
-18,meetings,1,0
-19,mitigate,1,0
-20,individuals,1,0
-21,substance,1,0
-22,disorderpsychological,1,0
-23,"distress,",1,0
-24,"behaviors,",1,0
-25,preferences,1,0
-26,healthcare,1,0
-27,workers,1,0
-28,pandemicadaptation,1,0
-29,evidence‐based,1,0
-30,suicide,1,0
-31,strategies,1,0
-32,covid‐19,2,1
-33,pandemicmanaging,1,0
-34,crisis:,1,0
-35,guidelines[pdf][pdf],1,0
-36,tourism:,1,0
+4,covid 19,0,1
+5,guidelines the,0,1
+6,consequences,2,0
+7,physical,1,0
+8,distancing ,0,1
+9,prevention,2,0
+10,interventioncovid 19,0,1
+11,geriatric,1,0
+12,populationa,0,1
+13,framework,1,0
+14,identifying,1,0
+15,mitigating,1,0
+16,interventionsonline,0,1
+17,recovery,1,0
+18,support,3,0
+19,meetings,1,0
+20,mitigate,1,0
+21,individuals,1,0
+22,substance,1,0
+23,disorderpsychological,0,1
+24,distress ,0,1
+25,behaviors ,0,1
+26,preferences,1,0
+27,healthcare,1,0
+28,workers,1,0
+29,pandemicadaptation,0,1
+30,evidence based,0,1
+31,suicide,1,0
+32,strategies,1,0
+33,pandemicmanaging,0,1
+34,crisis ,0,1
+35,guidelines pdf  pdf ,0,1
+36,tourism ,0,1
 37,overview,1,0
 38,impacts,1,0
-39,implications“there,1,0
-40,gilead”:,1,0
-41,workers',1,0
-42,counterstory,1,0
-43,crisis[pdf][pdf],1,0
-44,psychological,1,0
+39,implications there,0,1
+40,gilead  ,0,1
+41,workers ,0,1
+42,counterstory,0,1
+43,crisis pdf  pdf ,0,1
+44,psychological,0,1
 45,leaders,1,0
-46,covid-19.[html][html],1,0
-47,disaster:,1,0
+46,covid 19  html  html ,0,1
+47,disaster ,0,1
 48,perspective,1,0
-49,islamic,1,0
-50,education-neurosciencerecommendations,1,0
+49,islamic,0,1
+50,education neurosciencerecommendations,0,1
 51,leverage,1,0
 52,palliative,1,0
 53,nursing,1,0
-54,criseseffects,1,0
-55,"spirituality,",1,0
-56,"knowledge,",1,0
-57,"attitudes,",1,0
-58,anxiety,1,0
-59,regarding,1,0
-60,general,1,0
-61,population,1,0
-62,indonesia:,1,0
-63,cross-sectional,1,0
-64,pandemic,2,1
+54,criseseffects,0,1
+55,spirituality ,0,1
+56,knowledge ,0,1
+57,attitudes ,0,1
+58,anxiety,0,1
+59,regarding,0,1
+60,general,0,1
+61,population,0,1
+62,indonesia ,0,1
+63,cross sectional,0,1
+64,pandemic,2,0
 65,surgeons,1,0
-66,worldwidepositive,1,0
+66,worldwidepositive,0,1
 67,mindfulness,1,0
 68,meditation,1,0
 69,teachers,1,0
 70,outbreak,1,0
-71,italybereavement,1,0
+71,italybereavement,0,1
 72,frontline,1,0
 73,recommendations,1,0
 74,hospital,1,0
-75,cliniciansdeveloping,1,0
+75,cliniciansdeveloping,0,1
 76,measure,1,0
 77,distancing,1,0
 78,household,1,0
 79,conflict,1,0
-80,cohesionmitigating,1,0
+80,cohesionmitigating,0,1
 81,clinicians,1,0
