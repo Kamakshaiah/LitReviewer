@@ -1,9 +1,13 @@
+nltk
+spacy
+my-fake-useragent
 bs4
 requests
 lxml
 matplolib
 pandas
 scipy
+numpy
 sklearn
 gensim
 seaborn
