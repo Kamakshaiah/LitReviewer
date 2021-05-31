@@ -21,15 +21,48 @@ def appendText(path):
     except Exception as e:
         print('There was an error!')
 
+def cleanData(path, words_to_print=10, freq=1):
+
+    import os
+    import spacy
+    from collections import Counter
+
+##    spacy_stopwords = spacy.lang.en.stop_words.STOP_WORDS
+
+    pathch = os.path.join(path, 'output')
+    filepath = os.path.join(pathch, 'textfile.txt')
+
+    with open(filepath, 'r+') as file:
+        text = file.read()
+        file.close()
+
+    text = text.replace('\n', ' ')
+    text = text.replace('\r', ' ')
+    
+    nlp = spacy.load('en_core_web_sm')
+    text = nlp(text)
+    textwosw = []
+
+    words = [token.text for token in text if not token.is_stop and not token.is_punct]
+    wf = Counter(words)
+    wc = Counter(wf)
+    common_words = wf.most_common(words_to_print)
+    unique_words = [word for (word, freq) in wf.items() if freq == freq]
+
+    return {'common': common_words, 'unique': unique_words, 'words': wc}
+        
 def listOfWordsWithFreqs(path, print_words=False, nw = None):
 
     ''' Count (GOOGLE SEARCH list - gsearch module) WORDS and creates a dictinary of words and frequencies (termmat)
         wwov - words with out verbs (obtained from google search module)
 
         params: text (master text file created by appendText() method. '''
-    
+##    from cleandata import cleandata
+
+        
     pathch = os.path.join(path, 'output')
     filepath = os.path.join(pathch, 'textfile.txt')
+##    cd = cleandata(filepath)
 
     with open(filepath, 'r', encoding='unicode_escape') as infile:
         text = infile.read()
@@ -164,10 +197,13 @@ if __name__ == '__main__':
     print(path) 
 
     appendText(path)
-    
-    wfreq = listOfWordsWithFreqs(path, print_words=True, nw=10)
 
-    datatbl = makeTables(wfreq, path, file_name = 'termmat')
+##    wfreq = listOfWordsWithFreqs(path, print_words=True, nw=10)
+    wfreq = cleanData(path, words_to_print=10, freq=1)
+
+    data = wfreq['words'].items()
+
+    datatbl = makeTables(data, path, file_name = 'termmat2')
 
     from literstat import *
     print(computeIQR(datatbl['freq']))
@@ -177,5 +213,5 @@ if __name__ == '__main__':
 ##    barChart(df)
 ##    pieChart(df)
 ##    boxPlot(df)
-    clusanal = uniVarClusterAnalysis(datatbl, nc=1)
-    print(clusanal) 
+##    clusanal = uniVarClusterAnalysis(datatbl, nc=1)
+##    print(clusanal) 
