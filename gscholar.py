@@ -153,7 +153,7 @@ class gScholar:
 
 if __name__ == "__main__":
     import os
-    query = "impact of spirituality and religious practices on covid-19 mitigation"
+    query = "impact of healthcare capacity on covid-19 mitigation"
     path = os.getcwd()
 ##    path = os.path.join(path, 'output')
 

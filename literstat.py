@@ -4,7 +4,13 @@ def computeIQR(v1):
     from scipy import stats
     stat = stats.iqr(v1, axis=0)
     return stat
-    
+
+def oneSampleTTest(v1, mean=0):
+    ''' Performs one sample T Test for given word frequency vector '''
+    from scipy import stats
+    res = stats.ttest_1samp(v1, mean)
+    return res
+
 def twoSampleIndTTest(v1, v2):
     ''' Performs two sample ind. T Test for two different samples - for termmat and distinctwords distributions '''
     
@@ -22,13 +28,15 @@ def moodsTest(v1, v2, ties=True):
             g, p, med, tbl = median_test(v1, v2, lambda_="log-likelihood", ties="above")
         except Exception as e:
             print(e, " occured! Test doesn't work")
+        return {'g': g, 'p': p, 'med': med, 'tbl': tbl}
+    
     else:
         try:
             g, p, med, tbl = median_test(v1, v2, lambda_="log-likelihood")
         except Exception as e:
             print(e, " occured! Test doesn't work")
             
-    return {'g': g, 'p': p, 'med': med, 'tbl': tbl}
+        return {'g': g, 'p': p, 'med': med, 'tbl': tbl}
 
 def bartlettTest(v1, v2):
         ''' Useful for performing bartletts test of spherecity. Input data should be numerical (may be word frequencies) '''
@@ -116,6 +124,30 @@ def uniVarClusterAnalysis(data, nc=1):
     out = {'labels': labels, 'centroids': centroids, 'score': score, 'silhouette_score': silhouette_score}
     return out
 
+def biVariateClusterAnalysis(df, plot=False):
+    ''' Performs cluster analysis for bivariate data '''
+    from sklearn.cluster import KMeans
+    from sklearn import metrics
+    import matplotlib.pyplot as plt
+
+    idx0 = list(df.columns)[0]
+    idx1 = list(df.columns)[1]
+    
+    kmeans = KMeans(n_clusters=3).fit(df)
+
+    labels = kmeans.labels_
+    centroids = kmeans.cluster_centers_
+    score = kmeans.score(df)
+    silhouette_score = metrics.silhouette_score(df, labels, metric='euclidean')
+
+    if plot==True:
+        plt.scatter(df[idx0], df[idx1], c= kmeans.labels_.astype(float), s=50, alpha=0.5)
+        plt.scatter(centroids[:, 0], centroids[:, 1], c='red', s=50)
+        plt.show()
+
+    out = {'labels': labels, 'centroids': centroids, 'score': score, 'silhouette_score': silhouette_score}
+    return out
+
 def wordsByCategory(file_path, nclus):
     ''' Reads data from file system (file_path) and makes cluster wise words.
         Output has a dictionary with cluster number as keys and words as values '''
@@ -164,10 +196,16 @@ def crosstabFromWordsMatrix(file_path, output=False, norm=True):
 
     return {'ctbl': ctbl, 'results': {'chi_sq': out[0], 'p_value': out[1], 'dof': out[2]}}
 
-##if __name__ == '__main__':
-##    import numpy as np
-##    v1 = np.random.randint(1, 10, 30)
-##    v2 = np.random.randint(1, 10, 30)
+if __name__ == '__main__':
+    import numpy as np
+    v1 = np.random.randint(1, 10, 30)
+    v2 = np.random.randint(1, 10, 30)
 ##    print(bartlettTest(v1, v2))
 ##    print(computeIQR(v1))
 ##    print(moodsTest(v1, v2))
+    print(oneSampleTTest(v1))
+    import pandas as pd
+    data = {'v1': v1, 'v2':v2}
+    df = pd.DataFrame(data)
+    print(biVariateClusterAnalysis(df, plot=True))
+    

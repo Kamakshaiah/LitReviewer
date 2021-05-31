@@ -143,7 +143,7 @@ class gSearch:
     @staticmethod
     def saveMultipleFiles(links, path, list_for_d=None):
         for i in list_for_d:
-            self.saveTextFromLinks(links, path, link_num= i, name=f'{i}.txt')
+            saveTextFromLinks(links, path, link_num= i, name=f'{i}.txt')
     
     
 if __name__ == '__main__':
@@ -151,7 +151,7 @@ if __name__ == '__main__':
     path = os.getcwd()
     print(path) 
     
-    title = 'impact of spirituality and religious practices on Covid-19 mitigation'
+    title = 'impact of immunization on Covid-19 mitigation'
     num_links = 10
     duration = 1
     
@@ -170,7 +170,10 @@ if __name__ == '__main__':
 ##    gs.openLink(linksch, num = 0)
 ##    gs.saveTextFromLinks(linksch, path, link_num=0, name='file.txt')
 ##    gs.downloadPDF(linksch[1], path)
-        
-##    list_for_d = [0, 2, 3, 4, 5, 6, 8, 9]
+##        
+##    list_for_d = [0, 2, 3, 4, 5, 7]
 ##    for i in list_for_d:
-##	gs.saveTextFromLinks(linksch, path, link_num= i, name=f'{i}.txt')
+##        gs.saveTextFromLinks(linksch, path, link_num= i, name=f'{i}.txt')
+        
+##    for i in range(10):
+##        gs.saveTextFromLinks(linksch, path, link_num= i, name=f'{i}.txt')

@@ -171,11 +171,9 @@ if __name__ == '__main__':
 
     from literstat import *
     print(computeIQR(datatbl['freq']))
-    print(twoSampleIndTTest(datatbl['freq'], datatbl['freq']))
-    print(moodsTest(datatbl['freq'], datatbl['freq']))
-    print(bartlettTest(datatbl['freq'], datatbl['freq']))
-    
-    df = datatbl.head()
+    print(oneSampleTTest(datatbl['freq']))
+        
+##    df = datatbl.head()
 ##    barChart(df)
 ##    pieChart(df)
 ##    boxPlot(df)
